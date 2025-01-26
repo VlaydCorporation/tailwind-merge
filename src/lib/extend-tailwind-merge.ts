@@ -11,15 +11,15 @@ export const extendTailwindMerge = <
 >(
     configExtension:
         | ConfigExtension<
-              DefaultClassGroupIds | AdditionalClassGroupIds,
-              DefaultThemeGroupIds | AdditionalThemeGroupIds
-          >
+        DefaultClassGroupIds | AdditionalClassGroupIds,
+        DefaultThemeGroupIds | AdditionalThemeGroupIds
+    >
         | CreateConfigSubsequent,
     ...createConfig: CreateConfigSubsequent[]
 ) =>
     typeof configExtension === 'function'
         ? createTailwindMerge(getDefaultConfig, configExtension, ...createConfig)
         : createTailwindMerge(
-              () => mergeConfigs(getDefaultConfig(), configExtension),
-              ...createConfig,
-          )
+            () => mergeConfigs(getDefaultConfig(), configExtension),
+            ...createConfig,
+        )

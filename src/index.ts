@@ -1,3 +1,6 @@
+//! Last tailwind-merge commit (https://github.com/dcastil/tailwind-merge/commit/361cf8c63c83993691571b078950461db883ca3a)
+//! Last clsx commit (https://github.com/lukeed/clsx/commit/684509c3860a71e9e301b8c33f67e98ad5990c62)
+
 export { createTailwindMerge } from './lib/create-tailwind-merge'
 export { getDefaultConfig } from './lib/default-config'
 export { extendTailwindMerge } from './lib/extend-tailwind-merge'
@@ -8,10 +11,7 @@ export { twMerge } from './lib/tw-merge'
 export {
     type ClassValidator,
     type Config,
-    type ConfigExtension,
     type DefaultClassGroupIds,
     type DefaultThemeGroupIds,
-    type ExperimentalParseClassNameParam,
-    type ExperimentalParsedClassName,
 } from './lib/types'
 export * as validators from './lib/validators'

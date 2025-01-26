@@ -4,7 +4,6 @@ import {
     ClassNameValue,
     ClassValidator,
     Config,
-    ConfigExtension,
     DefaultClassGroupIds,
     DefaultThemeGroupIds,
     createTailwindMerge,
@@ -21,7 +20,7 @@ test('has correct export types', () => {
     expect(twMerge).toStrictEqual(expect.any(Function))
     expect(createTailwindMerge).toStrictEqual(expect.any(Function))
     expect(getDefaultConfig).toStrictEqual(expect.any(Function))
-    expect(validators).toMatchObject({
+    expect(validators).toEqual({
         isAny: expect.any(Function),
         isArbitraryLength: expect.any(Function),
         isArbitraryNumber: expect.any(Function),
@@ -36,7 +35,6 @@ test('has correct export types', () => {
         isNumber: expect.any(Function),
         isTshirtSize: expect.any(Function),
     })
-    expect(Object.keys(validators)).toHaveLength(13)
     expect(mergeConfigs).toStrictEqual(expect.any(Function))
     expect(extendTailwindMerge).toStrictEqual(expect.any(Function))
     expect(twJoin).toStrictEqual(expect.any(Function))
@@ -184,9 +182,7 @@ test('mergeConfigs has correct inputs and outputs', () => {
 })
 
 test('extendTailwindMerge has correct inputs and outputs', () => {
-    expect(extendTailwindMerge({} satisfies ConfigExtension<string, string>)).toStrictEqual(
-        expect.any(Function),
-    )
+    expect(extendTailwindMerge({})).toStrictEqual(expect.any(Function))
 })
 
 test('fromTheme has correct inputs and outputs', () => {
