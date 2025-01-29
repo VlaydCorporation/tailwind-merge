@@ -5,7 +5,7 @@ import { AnyConfig } from './types'
 
 type CreateConfigFirst = () => AnyConfig
 type CreateConfigSubsequent = (config: AnyConfig) => AnyConfig
-type TailwindMerge = (...classLists: ClassNameValue[]) => string
+export type TailwindMerge = (...classLists: ClassNameValue[]) => string
 type ConfigUtils = ReturnType<typeof createConfigUtils>
 
 export function createTailwindMerge(
